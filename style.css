@@ -1,0 +1,269 @@
+/* structure  */
+ul {
+  list-style: none;
+}
+
+html {
+  background-color: grey;
+}
+
+body {
+  display: grid;
+  grid-template: 1fr / 1fr 4fr;
+}
+
+.maincontent {
+  display: grid;
+  grid-template: 125px 1fr / 1fr;
+  row-gap: 10px;
+  background-color: #e5383b;
+}
+
+.content {
+  display: grid;
+  grid-template: 1fr 1fr / 3fr 1fr;
+  background-color: #b1a7a6;
+  padding: 20px;
+}
+
+.feed {
+  display: grid;
+  grid-template: repeat(3, 200px) / repeat(2, 1fr);
+  gap: 20px;
+  grid-area: 1/1/-1/1;
+}
+
+.header {
+  min-height: 100px;
+}
+
+img[src$=".jpg"] {
+  height: 50px;
+}
+
+img[src$=".svg"] {
+  height: 20px;
+
+  margin: 5px;
+}
+
+.sidebar {
+  display: grid;
+  grid-template: 20px 1fr 1fr / 1fr;
+  grid-row-start: 1;
+  grid-row-end: -1;
+  align-items: start;
+  background-color: #161a1d;
+}
+
+.nav>ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* style */
+
+body {
+  margin: 0;
+}
+
+.sidebar {
+  color: white;
+  padding: 10px;
+}
+
+img[src$=".svg"] {
+  filter: invert(100%) sepia(2%) saturate(2%) hue-rotate(341deg) brightness(108%) contrast(101%);
+}
+
+img[src$=".jpg"] {
+  border-radius: 50%;
+}
+
+.feed div {
+  background-color: #f5f3f4;
+  border-radius: 10px;
+  padding: 10px;
+  border-left: 10px solid #596869;
+  /* display: grid; */
+  /* grid-template: 5fr 1fr / 1fr; */
+}
+
+.announcements {
+  display: grid;
+  background-color: #d8e2dc;
+  border-radius: 10px;
+  padding: 10px;
+  margin-left: 15px;
+  grid-template: 1fr repeat(3, 2fr) / 1fr;
+  gap: 10px;
+}
+
+.announcements div:not(:first-child) {
+  text-align: center;
+  border-radius: 10px;
+}
+
+.announcements div:first-child {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.subscriptions {
+  display: grid;
+  background-color: #d8e2dc;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 0 0 15px;
+  grid-template: 1fr repeat(3, 2fr) / 1fr;
+  gap: 10px;
+  grid-row-start: 2;
+  grid-row-end: -1;
+  grid-column-start: -2;
+  grid-column-end: -1;
+}
+
+.subscriptions div:first-child {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.subscriptions div:not(:first-child) {
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* .username { */
+/*   height: */
+/* } */
+
+input[type="search"] {
+  border-radius: 30px;
+  max-width: 400px;
+  height: 25px;
+  border: 0;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.up {
+  display: grid;
+  grid-template: 1fr / 3fr 1fr;
+}
+
+/* .up input { */
+/*   grid-column-start: 2; */
+/*   grid-column-end: 3; */
+/* } */
+
+.up div:first-child {
+  display: grid;
+  grid-template: 1fr / 30px 1fr;
+  align-items: center;
+  justify-content: center;
+  margin-left: 50px;
+}
+
+.up div:first-child img {
+  justify-self: end;
+}
+
+li {
+  display: grid;
+  grid-template: 1fr / 50px 1fr;
+  align-items: center;
+}
+
+.up div:nth-child(2) {
+  display: grid;
+  grid-template: 1fr /50px auto 1fr;
+  align-items: center;
+  padding: 10px;
+}
+
+.down {
+  display: grid;
+  grid-template: 1fr / 1fr 1fr;
+}
+
+.down div:first-child {
+  display: grid;
+  gap: 10px;
+  grid-template: 1fr / 1fr 3fr;
+}
+
+.username div {
+  justify-self: start;
+  align-self: center;
+}
+
+.username img {
+  justify-self: end;
+}
+
+.btn {
+  display: grid;
+  grid-template: 1fr / repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+
+button {
+  width: 70px;
+  height: 30px;
+  background-color: #161a1d;
+  border: 0;
+  color: whitesmoke;
+  border-radius: 5px;
+}
+
+.btn button:first-child {
+  justify-self: end;
+}
+
+.btn button:last-child {
+  justify-self: start;
+}
+
+/* hover */
+
+li:hover {
+  background-color: whitesmoke;
+  color: #161a1d;
+  border-left: 3px solid #e5383b;
+  position: relative;
+  right: 10px;
+}
+
+li:hover img {
+  filter: invert(0%) sepia(93%) saturate(0%) hue-rotate(264deg) brightness(87%) contrast(108%);
+}
+
+button:hover {
+  background-color: whitesmoke;
+  color: #161a1d;
+  box-shadow:
+    rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.feed div:hover {
+  position: relative;
+  right: 10px;
+  bottom: 10px;
+}
+
+.notifications:hover {
+  filter: invert(0%) sepia(93%) saturate(0%) hue-rotate(264deg) brightness(87%) contrast(108%);
+}
+
+.announcements div:not(:first-child):hover,
+.subscriptions div:not(:first-child):hover {
+  border: 2px solid #596869;
+  background-color: #161a1d;
+  color: white;
+}
